@@ -1,0 +1,408 @@
+/* Aplicando a fonte Source Sans 3 ao texto da página */
+
+/*reset global*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*variáveis de cor*/
+:root{
+    --cinza: #dcdcdc;
+    --azul1: #48D1CC;
+    --azul2: #87CEEB;
+    --azul3: #B0C4DE;
+    --azul4: #6495ED;
+    --azul5: #778899;
+    --azul6: #dfe6e8;
+    --verde: #1c7e7e;
+    --branco:#ffff;
+    --roxo: #444477;
+}
+
+body{
+    /*cor do plano de fundo*/
+    background-color: var(--azul6);
+    height: 15vh; /*altura mínima do corpo da página*/
+    width: 1400px;;
+    font-family: 'Source Sans 3', sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+  display: flex; /* Faz os elementos ficarem lado a lado (flexbox) */
+  justify-content: space-around; /* Alinha os elementos horizontalmente com espaçamento entre eles */
+  align-items: center; /* Alinha os elementos verticalmente */
+  gap: 1rem; /* Espaçamento entre os elementos */
+  flex-wrap: wrap; /* Faz os elementos continuarem legíveis durante a responsividade */
+  padding: 0.8rem; /* Espaçamento interno */
+  background-color: var(--cinza); /* Cor de fundo */
+  min-height: 15vh; /* Altura mínima do cabeçalho */
+  width: 100%; /* Garante que o cabeçalho ocupe toda a largura da tela */
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+  overflow-x: hidden; /* Garante que não haja rolagem horizontal */
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column; /* Em telas pequenas, empilhe os elementos em vez de exibi-los lado a lado */
+      padding: 1rem; /* Ajuste no padding para telas pequenas */
+  }
+}
+
+
+/*prepara o cabeçalho para a imagem de logo*/
+.box-img-header{
+    height: 100%;
+}
+
+/*sets da imagem logo*/
+.img-logo{
+    max-width: 800px;
+    height: 150%;
+    padding-left: 6px;
+}
+
+/*seta os parâmetros da área de navegação do cabeçalho*/
+.nav{
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/*seta os parâmetros dos links de navegação do cabeçalho*/
+.nav-link{
+    text-decoration: none; /*tira o sublinhado do textos que contém links*/
+    color: var(--verde);
+    font-family: 'Sans Serif 3', sans-serif;
+    font-weight:550; /* Define o peso da fonte para bold */
+}
+
+/*seta para que ao passar o mouse em cima a palavra mude de cor e apareça sublinhada, de modo a indicar a existência de u link*/
+.nav-link:hover{
+    color: var(--azul4);
+    transition: .4s;
+    text-decoration: underline;
+}
+
+/*seta os parâmetros de redirecionamento do e-mail e do linkedin da header*/
+.nav-redirect {
+    display: flex; /* Makes the container a flexbox for horizontal alignment */
+    padding-right: 5%;
+    gap: 1rem; /* Adds spacing of 1rem between icons */
+    align-items: center; /* Centers icons vertically within the container */
+    justify-content: center; /* Centers icons horizontally within the container */
+}
+  
+  /*seta os ícones de e-mail e linkedin da header*/
+  .nav-redirect svg {
+    width: 27px; /* Adjust width as needed */
+    height: 27px; /* Adjust height as needed */;
+    color: var(--azul5)
+  }
+
+  /*seta a mudança de cor interativa dos ícones de e-mail e linkedin da header*/
+  .nav-redirect:hover svg {
+    width: 25px; /* Adjust width as needed */
+    height: 25px; /* Adjust height as needed */
+    color: var(--verde);
+    transition:.4s
+  }
+
+/*definição dos parâmetros principais do corpo da página*/
+main{
+    display: flex;
+    flex-direction: column; /*tira os elementos da seção da posição lado a lado e volta a organizá-los um embaixo do outro*/
+    gap: 1rem; /*foi onde mexi para voltar a deixar a primeira seção e as skills próxmos*/
+    padding: .1px;
+}
+
+/*parâmetros gerais exclusivos da primeira seção*/
+.first-section{
+    display: flex;
+    justify-content: space-evenly; /*centraliza os elementos na horizontal*/
+    gap: .1rem;
+    flex-wrap: wrap;
+    min-height: 478px; /*foi onde mexi para aproximar da header os itens da primeira seção*/
+    align-items: center;
+    padding: .10px;
+}
+
+/*parâmetros individuais da primeira div da primeira seção*/
+.img-perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Necessário para aplicar o movimento */
+    display: inline-block; /* Garante que a imagem ocupe seu espaço naturalmente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para movimento e sombra */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra suave para o efeito de flutuação */
+}
+
+.img-perfil:hover {
+  transform: translateY(-10px); /* Move a imagem para cima quando o mouse passa sobre ela */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3); /* Intensifica a sombra ao flutuar */
+}
+
+/*seta os parâmetros do botão da primeira seção*/
+button{
+    padding: .6rem;
+    font-size: .9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--roxo);
+  }
+
+/*seta o botão*/
+.btn-action{
+    background-color: transparent;
+    border: 1px solid var(--roxo);
+    color: var(--roxo);
+  }
+
+  /*seta os parâmetros de interação com o botão*/
+  
+.btn-action:hover {
+    background-color: transparent;
+    border: 1px solid var(--azul4);
+    color: var(--azul4);
+  }
+
+h1{
+    font-size: 4rem;
+    color: var(--azul5);
+    letter-spacing: 1.5px;
+    padding:0;
+  }
+
+.boas-vindas{
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+  }
+
+  /*setting do paragrafo da primeira seção*/
+.first-section p{
+    color: #202329;
+    text-align: justify;
+    margin-bottom: 15px;
+    gap: 1rem;
+    padding-right: 65px;
+  }
+
+  /*seta tudo que estiver em negrito*/
+strong{
+    color: var(--verde);
+  }
+
+  /*seta icone de perfil*/
+.img-perfil{
+    max-width: 380px;
+    max-height: 380px;
+    padding: 1rem;
+    border-radius: 50%;
+    width: 80%;
+  }
+
+  /*seta parâmetros de todos os títulos*/
+.title{
+    color: var(--verde);
+    margin-bottom: 40px;
+  }
+
+  /*seta parâmetros exclusivos da segunda seção*/
+.second-section{
+    background-color: var(--cinza);
+    color: var(--roxo);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  /*seta parâmetros gerais da lista*/
+.second-section ul{
+    list-style: none; /*tira os bullet points da lista*/
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  /*seta parametros de lista*/
+.second-section ul li{
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+
+  /*seta parametros de interação com a lista*/
+.second-section ul li:hover{
+    letter-spacing: 1px;
+    font-weight: bold;
+    color:var(--azul5);
+    transition:.4s;
+    cursor: default;
+  }
+
+.title-exp{
+    padding-left: 55px;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    color:var(--verde)
+  }
+
+.footer{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    justify-content: center;
+    color:var(--roxo);
+    align-items: center;
+    display: flex;
+  }
+
+.footer-links{
+    padding-top: 120px;
+    padding-bottom:6px;
+    display: flex; /* Makes the container a flexbox for horizontal alignment */
+    padding-right: 3%;
+    gap: 1rem; /* Adds spacing of 1rem between icons */
+    align-items: center; /* Centers icons vertically within the container */
+    justify-content: center; /* Centers icons horizontally within the container */
+}
+
+.footer-links svg {
+  width: 30px; /* Adjust width as needed */
+  height: 30px; /* Adjust height as needed */;
+  color: var(--verde)
+}
+
+.footer-links:hover svg{
+  width: 27px; /* Adjust width as needed */
+  height: 27px; /* Adjust height as needed */
+  color: var(--azul4);
+  transition:.2s
+}
+
+.third-section{
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+
+.slides1-experiencias{
+  width: 400%;
+  height: auto;
+  display: flex;
+}
+
+/*mexe com os inputs da seção. neste caso, os botões de bolinha (os "rádios")*/
+.slides1-experiencias input, .mobile{
+  display: none;
+}
+
+.slide-box{
+  width: 25%;
+  height: auto;
+  position: relative;
+  text-align: center;
+}
+
+.slide-box img{
+  width: 100%;
+}
+
+/*mexe diretamente com os botões de rádio*/
+.nav-manual, .nav-auto{
+  position: absolute;
+  width: 100%;
+  margin-top: 40%;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  transition: .2s;
+}
+
+/*seta os parametros dos radios*/
+.nav-manual .manual-btn, .nav-auto div{
+  border: 1px solid;
+  color: var(--verde);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.nav-manual .manual-btn:hover{
+  background-color: var(--verde);
+}
+
+/*começam os settings da quarta seção*/
+.fourth-section{
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+
+.slides-2-formacao{
+  width: 400%;
+  height: auto;
+  display: flex;
+}
+
+/*mexe com os inputs da seção. neste caso, os botões de bolinha (os "rádios")*/
+.slides-2-formacao input, .mobile{
+  display: none;
+}
+
+.slide-box{
+  width: 25%;
+  height: auto;
+  position: relative;
+  text-align: center;
+}
+
+.slide-box img{
+  width: 100%;
+}
+
+.title-form{
+  padding-left: 55px;
+  padding-top: 90px;
+  padding-bottom: 20px;
+  color:var(--verde)
+}
+
+
+/* Estilo de transição */
+#radio1:checked ~ .nav-auto .auto-btn1, #radio2:checked ~ .nav-auto .auto-btn2, #radio3:checked ~ .nav-auto .auto-btn3, #radio4:checked ~ .nav-auto .auto-btn4, #radio5:checked ~ .nav-auto .auto-btn5, #radio6:checked ~ .nav-auto .auto-btn6 {
+  color: var(--verde);  /* Define a cor do botão ativo */
+}
+
+#radio1:checked ~ .primeiro, #radio5:checked ~ .primeiro {
+  margin-left: 0%;
+}
+
+#radio2:checked ~ .primeiro, #radio6:checked ~ .primeiro {
+  margin-left: -25%;
+}
+
+#radio3:checked ~ .primeiro {
+  margin-left: -50%;
+}
+
+#radio4:checked ~ .primeiro {
+  margin-left: -75%;
+}
+
+
+
+
+
+
